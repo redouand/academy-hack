@@ -59,7 +59,7 @@ const getId = async (arr, docTitle) => {
         for (let i = 0; i < v.length; i++) {
             const lessonObj = v[i];
             await lessonPage.goto(lessonObj.lesson_link);
-            await lessonPage.waitForTimeout(1000);
+            await lessonPage.waitForTimeout(50);
             const id = await lessonPage.evaluate(() => {
                 if (document.querySelector(`iframe`) === null) {
                     return 'pdf'

@@ -1,8 +1,7 @@
 //------MODULES
 const express = require('express')
 const retrieve_input_route = new express.Router();
-const htmlSender = require('../utils/Set-HTML');
-const browserFoo = require('../utils/browser');
+const { htmlSender } = require('../utils/Set-HTML-browser');
 const fs = require('fs')
 
 
@@ -14,7 +13,6 @@ retrieve_input_route.post('/retrieve-input', async (req, res)=>{
     try {
         const { yearTxt, unitTxt } = JSON.parse(req.body.jsonInputs)
         await htmlSender(yearTxt, unitTxt)
-        await browserFoo()
 
         // --deletes file.
         fs.unlink(`${__dirname}/../client/Temp-HTML.html`, (err)=>{
