@@ -63,7 +63,7 @@ document.addEventListener('click', async function(e){
       }
       const direct = await axios.post('/get-direct-route', options)
       //--left off
-      vid.setAttribute('src', direct.data[3].url)
+      vid.setAttribute('src', direct.data[4].url)
       console.log(direct.data);//returns an empty obj
    }
 });

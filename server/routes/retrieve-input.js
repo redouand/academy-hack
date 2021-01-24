@@ -15,7 +15,7 @@ retrieve_input_route.post('/retrieve-input', async (req, res)=>{
         await htmlSender(yearTxt, unitTxt)
 
         // --deletes file.
-        fs.unlink(`${__dirname}/../client/Temp-HTML.html`, (err)=>{
+        fs.unlink(`${__dirname}/../../client/Temp-HTML.html`, (err)=>{
             if(err) throw err
             console.log('file Deleted');
         })
