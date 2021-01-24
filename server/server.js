@@ -15,6 +15,7 @@ const per_unit_route = require("./page-routes/per-unit-route");
 app.use(express.json());
 app.use("/static", express.static(`${__dirname}/../client`));
 app.set("view engine", "ejs");
+app.set('views',`${__dirname}/../views`);
 
 //----API ROUTES
 try {
