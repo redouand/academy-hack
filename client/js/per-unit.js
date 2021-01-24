@@ -61,7 +61,7 @@ document.addEventListener('click', async function(e){
       const options = {
           id
       }
-      const direct = await axios.post('http://localhost:8080/get-direct-route', options)
+      const direct = await axios.post('/get-direct-route', options)
       //--left off
       vid.setAttribute('src', direct.data[0].url)
       console.log(direct.data);//returns an empty obj

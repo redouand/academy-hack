@@ -74,7 +74,7 @@ exports.htmlSender = async (year, unit)=>{
         console.log("The HTML file was succesfully saved!");
     });
 
-    const triggerJson_page = await browser.newPage();    //TODO: change the url to the real one
-    await triggerJson_page.goto('http://localhost:8080/static/Temp-HTML.html', { waitUntil: 'networkidle0' })
+    const triggerJson_page = await browser.newPage();   //todo
+    await triggerJson_page.goto('https://academy-hack.herokuapp.com/static/Temp-HTML.html', { waitUntil: 'networkidle0' })
     await browser.close()
 }
