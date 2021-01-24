@@ -15,7 +15,7 @@ form.addEventListener('submit', async (e)=>{
         response_doc.innerHTML = 'required fields'
     }
 
-    else if(pass.value !== process.env.PASS){
+    else if(pass.value !== 'newlife47'){
         response_doc.innerHTML = 'wrong password..'
     }  
     else {
