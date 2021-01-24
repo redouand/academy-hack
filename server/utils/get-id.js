@@ -3,7 +3,7 @@ const fs = require("fs");
 const url = `https://ac.touahria.com/dashboard`
 
 const getId = async (arr, docTitle) => {
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
     const page = await browser.newPage();
 
     // ----BLOCKING STYLES, BEFORE GOING TO THE "URL"
