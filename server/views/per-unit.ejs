@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Layout | mapping</title>
+</head>
+<body>
+    <div><%= data %></div>
+    <div id="mydiv" data-unit_name=<%=data%>></div>
+    <video controls></video>
+
+    <script>
+        //--PASSING THE DATA TO THE SCRIPT FILE --WORKAROUND--
+        const myPassedData = document.getElementById('mydiv').dataset.unit_name
+        console.log(myPassedData);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../static/js/per-unit.js"></script>
+</body>
+</html>
