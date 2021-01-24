@@ -3,7 +3,7 @@ const fs = require("fs");
 const url = `https://ac.touahria.com/dashboard`
 
 const getId = async (arr, docTitle) => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
     // ----BLOCKING STYLES, BEFORE GOING TO THE "URL"
@@ -21,10 +21,10 @@ const getId = async (arr, docTitle) => {
     });
     await page.goto(url, { waitUntil: "networkidle0" });
 
-    await page.type(`input[id="user_login"]`, "theomurf47@gmail.com", {//TODO:
+    await page.type(`input[id="user_login"]`, process.env.ADDRESS, {
         delay: 30,
     });
-    await page.type(`input[id="user_pass"]`, "newlife47", { delay: 30 });//TODO:
+    await page.type(`input[id="user_pass"]`, process.env.PASS, { delay: 30 });
 
     const submitBtn = await page.$('input[id="wp-submit"]');
     await submitBtn.click();

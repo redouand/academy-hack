@@ -26,10 +26,10 @@ exports.htmlSender = async (year, unit)=>{
     });
     await page.goto(dash_url, { waitUntil: "networkidle0" });
 
-    await page.type(`input[id="user_login"]`, "theomurf47@gmail.com", {//TODO:
+    await page.type(`input[id="user_login"]`, process.env.ADDRESS, {
         delay: 30,
     });
-    await page.type(`input[id="user_pass"]`, "newlife47", { delay: 30 });//TODO:
+    await page.type(`input[id="user_pass"]`, process.env.PASS, { delay: 30 });
 
     const submitBtn = await page.$('input[id="wp-submit"]');
     await submitBtn.click();

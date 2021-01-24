@@ -14,8 +14,8 @@ form.addEventListener('submit', async (e)=>{
     if (year_input.value == '' || unit_input.value == '') {
         response_doc.innerHTML = 'required fields'
     }
-    //TODO: change the password to process.config
-    else if(pass.value !== 'newlife47'){
+
+    else if(pass.value !== process.env.PASS){
         response_doc.innerHTML = 'wrong password..'
     }  
     else {
