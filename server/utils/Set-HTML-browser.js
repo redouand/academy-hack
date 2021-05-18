@@ -8,7 +8,7 @@ const dash_url = `https://ac.touahria.com/dashboard`
 
 
 exports.htmlSender = async (year, unit)=>{
-    const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
+    const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
 
     // ----BLOCKING STYLES, BEFORE GOING TO THE "URL"

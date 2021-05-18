@@ -12,8 +12,9 @@ const fs = require('fs')
 retrieve_input_route.post('/retrieve-input', async (req, res)=>{
     try {
         const { yearTxt, unitTxt } = JSON.parse(req.body.jsonInputs)
+        console.log(yearTxt)
         await htmlSender(yearTxt, unitTxt)
-
+        console.log('html sender has been executed!!')
         // --deletes file.
         fs.unlink(`${__dirname}/../../client/Temp-HTML.html`, (err)=>{
             if(err) throw err
